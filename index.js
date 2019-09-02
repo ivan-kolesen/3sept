@@ -37,5 +37,7 @@ function renderPage () {
 
 renderPage();
 
+window.onload = () => console.log(1);
+
 pages.addEventListener('click', handleClick);
 calendar.addEventListener('click', play);
