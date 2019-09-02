@@ -1,6 +1,7 @@
 const pages = document.querySelector('.pages');
 const calendar = document.querySelector('.calendar');
-const audio = document.querySelector('audio');
+const song = document.querySelector('#audio');
+
 
 function handleClick (e) {
   updateCalendar(e.target);
@@ -19,11 +20,6 @@ function updateCalendar (target) {
   renderPage();
 }
 
-function play(){
-
-  audio.onloadend = () => console.log(1)
-}
-
 function renderPage () {
   const newPage = document.createElement('div');
   newPage.classList.add('page');
@@ -35,14 +31,16 @@ function renderPage () {
   `;
   pages.appendChild(newPage);
 }
+function play(){
+  const song = document.querySelector('#audio');
+  song.play();
+}
 
-renderPage();
-
-window.onload = () => {
-  play();
+song.onloadeddata = () => {
   document.querySelector(".loader-wrapper").style.display = "none";
+  renderPage();
+  pages.addEventListener('click', handleClick);
+  calendar.addEventListener('click', play);
+}
 
-};
 
-pages.addEventListener('click', handleClick);
-calendar.addEventListener('click', play);
