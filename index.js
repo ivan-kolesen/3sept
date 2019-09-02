@@ -36,11 +36,13 @@ function play(){
   song.play();
 }
 
-song.onloadeddata = () => {
+window.onload = () => {
   document.querySelector(".loader-wrapper").style.display = "none";
   renderPage();
   pages.addEventListener('click', handleClick);
   calendar.addEventListener('click', play);
 }
+
+
 
 
