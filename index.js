@@ -1,5 +1,6 @@
 const pages = document.querySelector('.pages');
 const calendar = document.querySelector('.calendar');
+const audio = document.querySelector('audio');
 
 function handleClick (e) {
   updateCalendar(e.target);
@@ -8,6 +9,7 @@ function handleClick (e) {
 function updateCalendar (target) {
   if (target && target.classList.contains('page')) {
     target.classList.add('tear');
+    document.querySelector(".tear").style.WebkitAnimation = "tear-animation 0.8s linear forwards";
     setTimeout(() => {
       pages.removeChild(target);
     }, 800);
@@ -19,7 +21,7 @@ function updateCalendar (target) {
 
 function play(){
 
-  audio.play();
+  audio.onloadend = () => console.log(1)
 }
 
 function renderPage () {
@@ -37,14 +39,10 @@ function renderPage () {
 renderPage();
 
 window.onload = () => {
+  play();
   document.querySelector(".loader-wrapper").style.display = "none";
-  document.querySelector(".tear").style.WebkitAnimation = "tear-animation 0.8s linear forwards";
-};
 
-let audio = new Audio();
-audio.src = "./song.mp3";
-audio.autoplay = false;
-audio.loop = true;
+};
 
 pages.addEventListener('click', handleClick);
 calendar.addEventListener('click', play);
