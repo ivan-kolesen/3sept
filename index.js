@@ -42,7 +42,6 @@ window.onload = () => {
 };
 
 let audio = new Audio();
-audio.volume = 0.03;
 audio.src = "./song.mp3";
 audio.autoplay = false;
 audio.loop = true;
