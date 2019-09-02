@@ -106,6 +106,7 @@ p {
 }
 @-webkit-keyframes tear-animation {
 	0% {
+		-webkit-backface-visibility: hidden;
 		-webkit-transform: rotate(0deg);
 		transform: rotate(0deg);
 		top: 0;
