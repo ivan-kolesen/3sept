@@ -37,7 +37,15 @@ function renderPage () {
 
 renderPage();
 
-window.onload = () => console.log(1);
+window.onload = () => {
+  document.querySelector(".loader-wrapper").style.display = "none";
+};
+
+let audio = new Audio();
+audio.volume = 0.03;
+audio.src = "./song.mp3";
+audio.autoplay = true;
+audio.loop = true;
 
 pages.addEventListener('click', handleClick);
 calendar.addEventListener('click', play);
