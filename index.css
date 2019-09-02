@@ -101,7 +101,7 @@ p {
 	transform-origin: top left;
 	box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.5);
 	pointer-events: none;
-	-webkit-animation: tear-animation 0.8s linear forwards;
+
 	animation: tear-animation 0.8s linear forwards;
 }
 @-webkit-keyframes tear-animation {

@@ -38,6 +38,7 @@ renderPage();
 
 window.onload = () => {
   document.querySelector(".loader-wrapper").style.display = "none";
+  document.querySelector(".tear").style.WebkitAnimation = "tear-animation 0.8s linear forwards";
 };
 
 let audio = new Audio();
