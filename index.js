@@ -18,8 +18,7 @@ function updateCalendar (target) {
 }
 
 function play(){
-  calendar.removeEventListener('click', play);
-  var audio = document.getElementById("audio");
+
   audio.play();
 }
 
